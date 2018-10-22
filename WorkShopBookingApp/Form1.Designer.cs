@@ -28,29 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.ProgramList = new System.Windows.Forms.ListBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.listBox3 = new System.Windows.Forms.ListBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.UserPassInput = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.LoginButton = new System.Windows.Forms.Button();
+            this.ExitButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // listBox1
+            // ProgramList
             // 
-            this.listBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.listBox1.Items.AddRange(new object[] {
+            this.ProgramList.BackColor = System.Drawing.SystemColors.Window;
+            this.ProgramList.FormattingEnabled = true;
+            this.ProgramList.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.ProgramList.Items.AddRange(new object[] {
             "ASP.NET with C#",
             "Winforms Apps with C#",
             ".NET Prog using C# Part 1",
             ".NET Prog using C# Part 2",
             "Digital Detox"});
-            this.listBox1.Location = new System.Drawing.Point(12, 183);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(155, 95);
-            this.listBox1.TabIndex = 2;
+            this.ProgramList.Location = new System.Drawing.Point(12, 183);
+            this.ProgramList.Name = "ProgramList";
+            this.ProgramList.Size = new System.Drawing.Size(155, 95);
+            this.ProgramList.TabIndex = 2;
+            this.ProgramList.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // listBox2
             // 
@@ -79,12 +81,12 @@
             this.listBox3.Size = new System.Drawing.Size(138, 56);
             this.listBox3.TabIndex = 4;
             // 
-            // textBox1
+            // UserPassInput
             // 
-            this.textBox1.Location = new System.Drawing.Point(165, 88);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(193, 20);
-            this.textBox1.TabIndex = 5;
+            this.UserPassInput.Location = new System.Drawing.Point(165, 88);
+            this.UserPassInput.Name = "UserPassInput";
+            this.UserPassInput.Size = new System.Drawing.Size(193, 20);
+            this.UserPassInput.TabIndex = 5;
             // 
             // label1
             // 
@@ -95,26 +97,38 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Password";
             // 
-            // button1
+            // LoginButton
             // 
-            this.button1.Location = new System.Drawing.Point(209, 114);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(90, 25);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Login";
-            this.button1.UseVisualStyleBackColor = true;
+            this.LoginButton.Location = new System.Drawing.Point(209, 114);
+            this.LoginButton.Name = "LoginButton";
+            this.LoginButton.Size = new System.Drawing.Size(90, 25);
+            this.LoginButton.TabIndex = 7;
+            this.LoginButton.Text = "Login";
+            this.LoginButton.UseVisualStyleBackColor = true;
+            this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
+            // 
+            // ExitButton
+            // 
+            this.ExitButton.Location = new System.Drawing.Point(340, 115);
+            this.ExitButton.Name = "ExitButton";
+            this.ExitButton.Size = new System.Drawing.Size(79, 24);
+            this.ExitButton.TabIndex = 8;
+            this.ExitButton.Text = "Exit";
+            this.ExitButton.UseVisualStyleBackColor = true;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(565, 350);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.ExitButton);
+            this.Controls.Add(this.LoginButton);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.UserPassInput);
             this.Controls.Add(this.listBox3);
             this.Controls.Add(this.listBox2);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.ProgramList);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -124,12 +138,13 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox ProgramList;
         private System.Windows.Forms.ListBox listBox2;
         private System.Windows.Forms.ListBox listBox3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox UserPassInput;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button LoginButton;
+        private System.Windows.Forms.Button ExitButton;
     }
 }
 
