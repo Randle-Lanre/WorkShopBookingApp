@@ -42,11 +42,11 @@ namespace WorkShopBookingApp
             Password = UserPassInput.Text;
             Validpassword = "iLoveVisualC#";
             
-            if (!Password.Equals(Validpassword) && Trials > 0)
+            if (!Password.Equals(Validpassword) && Trials > 1)
             {
 
                 Trials--;
-                MessageBox.Show("wrong Password you have " + Trials + "Trials left");
+                MessageBox.Show("wrong Password you have " + Trials + " trials left");
                 UserPassInput.Focus();
                 UserPassInput.SelectAll();
                 
