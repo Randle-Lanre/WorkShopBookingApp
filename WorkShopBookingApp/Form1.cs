@@ -59,6 +59,10 @@ namespace WorkShopBookingApp
             else
             {
                 MessageBox.Show("Welcome");
+                LocationList.Visible = true;
+                MealList.Visible = true;
+                ProgramList.Visible = true;
+                CertificateList.Visible = true;
 
             }
 
