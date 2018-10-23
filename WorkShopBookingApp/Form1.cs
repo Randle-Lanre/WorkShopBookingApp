@@ -46,14 +46,14 @@ namespace WorkShopBookingApp
             {
 
                 Trials--;
-                MessageBox.Show("wrong Password you have " + Trials + " trials left");
+                MessageBox.Show("Wrong Password: you have " + Trials + " trials left");
                 UserPassInput.Focus();
                 UserPassInput.SelectAll();
                 
             }
             else if (!Password.Equals("iLoveVisualC#") && Trials == 1)
             {
-                MessageBox.Show("Too Many Wrong Passwords");
+                MessageBox.Show("Too Many Wrong Passwords, Exiting now");
                 this.Close();
             }
             else
@@ -63,6 +63,12 @@ namespace WorkShopBookingApp
                 MealList.Visible = true;
                 ProgramList.Visible = true;
                 CertificateList.Visible = true;
+                BookingGroupBox.Visible = true;
+                DisplayButton.Visible = true;
+                ClearButton.Visible = true;
+                BookingButton.Visible = true;
+                SummaryButton.Visible = true;
+
 
             }
 

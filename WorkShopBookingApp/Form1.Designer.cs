@@ -146,6 +146,7 @@
             this.DisplayButton.TabIndex = 9;
             this.DisplayButton.Text = "Display";
             this.DisplayButton.UseVisualStyleBackColor = true;
+            this.DisplayButton.Visible = false;
             // 
             // SummaryButton
             // 
@@ -155,6 +156,7 @@
             this.SummaryButton.TabIndex = 10;
             this.SummaryButton.Text = "Booking Summary";
             this.SummaryButton.UseVisualStyleBackColor = true;
+            this.SummaryButton.Visible = false;
             // 
             // ClearButton
             // 
@@ -164,6 +166,7 @@
             this.ClearButton.TabIndex = 11;
             this.ClearButton.Text = "Clear";
             this.ClearButton.UseVisualStyleBackColor = true;
+            this.ClearButton.Visible = false;
             // 
             // CertificateList
             // 
@@ -185,6 +188,7 @@
             this.BookingButton.TabIndex = 13;
             this.BookingButton.Text = "Book";
             this.BookingButton.UseVisualStyleBackColor = true;
+            this.BookingButton.Visible = false;
             // 
             // BookingGroupBox
             // 
@@ -204,6 +208,7 @@
             this.BookingGroupBox.TabIndex = 14;
             this.BookingGroupBox.TabStop = false;
             this.BookingGroupBox.Text = "Your Booking Details";
+            this.BookingGroupBox.Visible = false;
             // 
             // label2
             // 
