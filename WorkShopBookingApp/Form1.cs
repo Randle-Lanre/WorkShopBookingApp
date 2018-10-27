@@ -10,46 +10,97 @@ using System.Windows.Forms;
 
 namespace WorkShopBookingApp
 {
-    public partial class Form1 : Form
+    public partial class Learn2Prog_Ltd_Form : Form
     {
         int Trials = 3;
 
-
+        //used to house booking information, that would later be used to calculate
+        //the summary
         List<decimal> ProgramFeeSummary = new List<decimal>();
         List<decimal> LocationFeeSummary = new List<decimal>();
         List<decimal> FoodFeeSummary = new List<decimal>();
         List<decimal> CertificateFeeSummary = new List<decimal>();
         //-------------------------------------------------
 
+        //declared temporary list to hold values.
+        List<decimal> TempProgramFeeSummary = new List<decimal>();
+        List<decimal> TempLocationFeeSummary = new List<decimal>();
+        List<decimal> TempFoodFeeSummary = new List<decimal>();
+        List<decimal> TempCertificateFeeSummary = new List<decimal>();
+
+
+        //--------------------------------------------------
+        //list declared to hold the price of the workshop,location,food and certificate
         List<decimal> ProgramFee = new List<decimal> { 1200m,1000m,1500m,1800m,599m };
+       
         List<decimal> LocationFee = new List<decimal> { 150m,225m,175m,305m,135m,89m };
-        List<decimal> FoodFee = new List<decimal> { 39.50m,27.50m, 12.50m};
+        List<decimal> FoodFee = new List<decimal> { 39.50m,27.50m, 12.50m,0.0m};
         List<decimal> CertFee = new List<decimal> {0.0m, 29.95m };
 
         //-----------------------------------------------------
 
-        List<string> LocationLocation = new List<string> {"Cork", "Dublin", "Galway",
-                                                        "Belmullet", "Limerick","Wexford" };
+        List<string> LocationLocation = new List<string> {"Cork €150", "Dublin €225", "Galway €175",
+                                                        "Belmullet €305", "Limerick €135","Wexford €89" };
 
-        List<string> ProgramProgram = new List<string> {"Asp.NET with C#","Winforms with C#",
-                                                    ".NET Prog Using C#",".NET Prog Using C#",
-                                                            "Digital Detox" };
+        List<string> ProgramProgram = new List<string> {"Asp.NET with C# (4 Days) €1,200",
+                                                        "Winforms with C# (3 Days) €1,000",
+                                                    ".NET Prog Using C# Part1 (4 Days) €1,500",
+                                                        ".NET Prog Using C# Part2 (4 Days) €1,800",
+                                                            "Digital Detox  (1 Day) €599" };
 
-        List<string> FoodFood = new List<string> { "FullBoard", "HalfBoard", "Breakfast" };
-        List<string> CertCert = new List<string> { "Digital Cert(Free)", "Printed Cert" };
+        
+
+       // List<string> FoodFood = new List<string> { "FullBoard", "HalfBoard", "Breakfast","No food" };
+        //List<string> CertCert = new List<string> { "Digital Cert(Free)", "Printed Cert" };
+
+        const string FULLBOARD = "FullBoard";
+        const string HALFBOARD = "HalfBoard";
+        const string BREAKFAST = "BreakFast Only";
+        const string NOFOOD = "No Meal Required";
+
+        const string DIGITALCERTIFICATE = "Digital Certificate(Free)";
+        const string PRINTEDCERTIFICATE = "Printed Certificate";
+
+        int ProgIndex, LocIndex, MealIndex, CertIndex;
+
+        //Our Calculate declaration for display button
+        decimal CalculateTotal;
+        decimal CalculateProg, CalculateLoc, CalculateFood, CalculateCert;
 
 
-        public Form1()
+        string MessageOut;
+
+       
+        public Learn2Prog_Ltd_Form()
         {
             InitializeComponent();
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void Learn2Prog_Ltd_Form_Load(object sender, EventArgs e)
         {
-            if (LocationList.SelectedIndex != -1) { MessageBox.Show("Please Select an item"); }
+
+            LocationList.Visible = false;
+            ProgramList.Visible = false;
+            BookingGroupBox.Visible = false;
+            DisplayButton.Visible = false;
+            ClearButton.Visible = false;
+            BookingButton.Visible = false;
+            SummaryButton.Visible = false;
+            OptionalSelectionGB.Visible = false;
+
+            SummaryButton.Enabled = false;
+            BookingButton.Enabled = false;
+            ClearButton.Enabled = false;    
+
+
+
+
+
+            MealList.SelectedIndex = 3;
+            CertificateList.SelectedIndex = 0;
+
+
         }
-
-
 
 
 
@@ -66,7 +117,7 @@ namespace WorkShopBookingApp
             string Validpassword;
             Password = UserPassInput.Text;
             UserPassInput.PasswordChar = '*';
-            Validpassword = "iLoveVisualC#";
+            Validpassword = "#";
             
             
             if (!Password.Equals(Validpassword) && Trials > 1)
@@ -106,42 +157,124 @@ namespace WorkShopBookingApp
 
         private void DisplayButton_Click(object sender, EventArgs e)
         {
-            int ProgIndex, LocIndex, MealIndex, CertIndex;
-
-            // listBoxUserSummary.Items.Add(ProgramList.SelectedItem);
-            //listBoxUserSummary.Items.Add(LocationList.SelectedItem);
-            //listBoxUserSummary.Items.Add(MealList.SelectedItem);
-            //listBoxUserSummary.Items.Add(CertificateList.SelectedItem);
-
-            ProgIndex = ProgramList.SelectedIndex;
-            LocIndex = LocationList.SelectedIndex;
-            MealIndex = MealList.SelectedIndex;
-            CertIndex = CertificateList.SelectedIndex;
-
-            //LocationSummary.Text = (LocationFee.ElementAt(LocIndex)).ToString();
-            ProgramSummary.Text = ProgramProgram.ElementAt(ProgIndex);
-            LocationSummary.Text = LocationLocation.ElementAt(LocIndex);
-            MealOptionSummary.Text = FoodFood.ElementAt(MealIndex);
-            CertificateChoosen.Text = CertCert.ElementAt(CertIndex);
-
-
-            decimal CalculateTotal;
-            decimal CalculateProg, CalculateLoc, CalculateFood, CalculateCert;
-
-            CalculateProg = ProgramFee.ElementAt(ProgIndex);
-            CalculateLoc = LocationFee.ElementAt(LocIndex);
-            CalculateFood = FoodFee.ElementAt(MealIndex);
-            CalculateCert = CertFee.ElementAt(CertIndex);
-
-            CalculateTotal = CalculateProg + CalculateLoc + CalculateFood + CalculateCert;
-            TotalCost.Text = CalculateTotal.ToString("C");
-            
-            
-            
 
             
-            
+
+            if(ProgramList.SelectedIndex !=-1)
+            {
+                
+                if(LocationList.SelectedIndex !=-1)
+                {
+                    ProgIndex = ProgramList.SelectedIndex;
+                    LocIndex = LocationList.SelectedIndex;
+
+                    MealIndex = MealList.SelectedIndex;
+                    CertIndex = CertificateList.SelectedIndex;
+
+
+                    ProgramSummary.Text = ProgramProgram.ElementAt(ProgIndex);
+                    LocationSummary.Text = LocationLocation.ElementAt(LocIndex);
+                    //MealOptionSummary.Text = FoodFood.ElementAt(MealIndex);
+                    //CertificateChoosen.Text = CertCert.ElementAt(CertIndex);
+
+                    
+
+                    CalculateProg = ProgramFee.ElementAt(ProgIndex);
+                    TempProgramFeeSummary.Add(CalculateProg);
+
+                    CalculateLoc = LocationFee.ElementAt(LocIndex);
+                    TempLocationFeeSummary.Add(CalculateLoc);
+
+                    CalculateFood = FoodFee.ElementAt(MealIndex);
+                    TempFoodFeeSummary.Add(CalculateFood);
+
+                    CalculateCert = CertFee.ElementAt(CertIndex);
+                    TempCertificateFeeSummary.Add(CalculateCert);
+
+
+
+                    CalculateTotal = CalculateProg + CalculateLoc + CalculateFood + CalculateCert;
+                    TotalCost.Text = CalculateTotal.ToString("C1");
+
+                    ClearButton.Enabled = true;
+                    BookingButton.Enabled = true;
+                }
+                else { MessageBox.Show("Please Select a Location","Invalid Argument", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning); LocationList.Focus(); }
+
+
+            }
+            else { MessageBox.Show("Please Select a Program","Invalid Argument", MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);ProgramList.Focus(); }
+
+
+                    switch (MealIndex)
+                    {
+                        case 0:
+                            MealOptionSummary.Text = FULLBOARD;
+                            break;
+                        case 1:
+                            MealOptionSummary.Text = HALFBOARD;
+                            break;
+                        case 2:
+                            MealOptionSummary.Text = BREAKFAST;
+                            break;
+                        default:
+                            MealOptionSummary.Text = NOFOOD;
+                            break;
+                    }
+
+                    switch(CertIndex)
+                    {
+                        case 0:
+                            CertificateChoosen.Text = DIGITALCERTIFICATE;
+                            break;
+                        case 1:
+                            CertificateChoosen.Text = PRINTEDCERTIFICATE;
+                            break;
+                    }
 
         }
+
+
+        private void BookingButton_Click(object sender, EventArgs e)
+        {
+
+            SummaryButton.Enabled = true;
+
+            ProgramFeeSummary.Add(TempProgramFeeSummary[0]);
+            LocationFeeSummary.Add(TempLocationFeeSummary[0]);
+            FoodFeeSummary.Add(TempFoodFeeSummary[0]);
+            CertificateFeeSummary.Add(TempCertificateFeeSummary[0]);
+
+
+            TempProgramFeeSummary.Clear();
+            TempLocationFeeSummary.Clear();
+            TempFoodFeeSummary.Clear();
+            TempCertificateFeeSummary.Clear();
+
+
+            MessageOut = ("Your Booking Informations:\n"+"Program: "+ProgramSummary.Text
+                                +"\n"+ "Location: "+LocationSummary.Text+ "\n"+ "Amount Due: "+ TotalCost.Text);
+
+            MessageBox.Show(MessageOut,"Booking Confirmation - Learn2Prog Ltd", 
+                                MessageBoxButtons.OK, MessageBoxIcon.Question);
+
+
+            
+
+
+        }
+
+        private void SummaryButton_Click(object sender, EventArgs e)
+        {
+
+
+
+        }
+
+
     }
+            
+
 }
