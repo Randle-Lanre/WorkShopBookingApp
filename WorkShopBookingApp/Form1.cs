@@ -8,20 +8,39 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WorkShopBookingApp
+//namespace for learn2prog app
+namespace Learn2Prog_Ltd
 {
     public partial class Learn2Prog_Ltd_Form : Form
     {
+        //maximum failed login attemps is set to 3
         int Trials = 3;
 
+        //the string password stores the user input(password) while valid password stores the
+        //correct password, which would later be matched to see if there are the same
+        string Password;
+        string Validpassword;
+
+
+       //=====================================================================
+       // The lists below (indicated by Begining and end)                       
+       // list four categories of list the first section stores the 
+       // user booking details, when the book button is clicked, the second   
+       // is a temporay list that holds the data until the book button is 
+       // clicked, then the data is added to the summary and hen cleared
+       // the two other categories of list containing the location and price
+       // of the workshop, when a user selects an item, the index would be 
+       // retained and runed again the two list.
+       //=======================================================================
+     //BEGINING-----------------------------------------------------------------------------------   
         //used to house booking information, that would later be used to calculate
         //the summary
         List<decimal> ProgramFeeSummary = new List<decimal>();
         List<decimal> LocationFeeSummary = new List<decimal>();
         List<decimal> FoodFeeSummary = new List<decimal>();
         List<decimal> CertificateFeeSummary = new List<decimal>();
-        //-------------------------------------------------
 
+        //-------------------------------------------------
         //declared temporary list to hold values.
         List<decimal> TempProgramFeeSummary = new List<decimal>();
         List<decimal> TempLocationFeeSummary = new List<decimal>();
@@ -48,19 +67,20 @@ namespace WorkShopBookingApp
                                                         ".NET Prog Using C# Part2 (4 Days) €1,800",
                                                             "Digital Detox  (1 Day) €599" };
 
-        
+      //END--------------------------------------------------------------------------  
 
-       // List<string> FoodFood = new List<string> { "FullBoard", "HalfBoard", "Breakfast","No food" };
-        //List<string> CertCert = new List<string> { "Digital Cert(Free)", "Printed Cert" };
-
+       
+        //meal options to be used in the switch/case 
         const string FULLBOARD = "FullBoard";
         const string HALFBOARD = "HalfBoard";
         const string BREAKFAST = "BreakFast Only";
         const string NOFOOD = "No Meal Required";
 
+        //certificate to be used in the switch/case
         const string DIGITALCERTIFICATE = "Digital Certificate(Free)";
         const string PRINTEDCERTIFICATE = "Printed Certificate";
 
+        //used to hold index values for the program, location/lodging,meal and certificate
         int ProgIndex, LocIndex, MealIndex, CertIndex;
 
         //Our Calculate declaration for display button
@@ -68,6 +88,11 @@ namespace WorkShopBookingApp
         decimal CalculateProg, CalculateLoc, CalculateFood, CalculateCert;
 
 
+        //login warning message
+        string WarningMessage;
+
+        //format the output string that appears in a message box when the user 
+        //clicks the book button
         string MessageOut;
 
        
@@ -76,9 +101,14 @@ namespace WorkShopBookingApp
             InitializeComponent();
         }
 
+       
+
         private void Learn2Prog_Ltd_Form_Load(object sender, EventArgs e)
         {
-
+            /* makes the listbox of the location, program, meal option
+             * ,certificate options and all other buttons aside login and exit buttons
+             *  invisible when the program is started
+             */
             LocationList.Visible = false;
             ProgramList.Visible = false;
             BookingGroupBox.Visible = false;
@@ -87,15 +117,17 @@ namespace WorkShopBookingApp
             BookingButton.Visible = false;
             SummaryButton.Visible = false;
             OptionalSelectionGB.Visible = false;
+            AllBookingSummaryGB.Visible = false;
 
+            //the summary, book and clear button are disabled
             SummaryButton.Enabled = false;
             BookingButton.Enabled = false;
-            ClearButton.Enabled = false;    
+            ClearButton.Enabled = false;
 
 
+          
 
-
-
+            //this makes a default selection for the meal option and certificate
             MealList.SelectedIndex = 3;
             CertificateList.SelectedIndex = 0;
 
@@ -104,7 +136,7 @@ namespace WorkShopBookingApp
 
 
 
-
+        //this closes the program
         private void ExitButton_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -113,41 +145,43 @@ namespace WorkShopBookingApp
         private void LoginButton_Click(object sender, EventArgs e)
         {
             
-            string Password;
-            string Validpassword;
-            Password = UserPassInput.Text;
+            
+            Password = UserPassInput.Text; //gets the user input(password)
             UserPassInput.PasswordChar = '*';
-            Validpassword = "#";
+            Validpassword = "#";//correct password
             
-            
-            if (!Password.Equals(Validpassword) && Trials > 1)
+            //if password entered is incorrect and the user still has more than 1 attempts
+            if (!Password.Equals(Validpassword) && Trials > 0)
             {
-
+                
                 Trials--;
-                MessageBox.Show("Wrong Password: you have " + Trials + " trials left");
+                
+                 WarningMessage = "Wrong Password: you have " + Trials + " attempts left";
+                MessageBox.Show(WarningMessage,"Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
                 UserPassInput.Focus();
                 UserPassInput.SelectAll();
                 
             }
-            else if (!Password.Equals("iLoveVisualC#") && Trials == 1)
+            else if (!Password.Equals("iLoveVisualC#") && Trials == 0)
             {
-                MessageBox.Show("Too Many Wrong Passwords, Exiting now");
+                MessageBox.Show("Too Many Wrong Passwords, Exiting now","Error",MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
                 this.Close();
             }
             else
             {
-                MessageBox.Show("Welcome");
+               // MessageBox.Show("Welcome",MessageBoxButtons.OK,MessageBoxIcon.None);
                 LocationList.Visible = true;
-               // MealList.Visible = true;
+               
                 ProgramList.Visible = true;
-                //CertificateList.Visible = true;
+                
                 BookingGroupBox.Visible = true;
                 DisplayButton.Visible = true;
                 ClearButton.Visible = true;
                 BookingButton.Visible = true;
                 SummaryButton.Visible = true;
-                //listBoxUserSummary.Visible = true;
-               // DetailsTitleLabel.Visible = true;
+                
                 OptionalSelectionGB.Visible = true;
 
             }
@@ -191,13 +225,14 @@ namespace WorkShopBookingApp
                     CalculateCert = CertFee.ElementAt(CertIndex);
                     TempCertificateFeeSummary.Add(CalculateCert);
 
-
+                   
 
                     CalculateTotal = CalculateProg + CalculateLoc + CalculateFood + CalculateCert;
-                    TotalCost.Text = CalculateTotal.ToString("C1");
+                    TotalCost.Text = CalculateTotal.ToString("C");
 
                     ClearButton.Enabled = true;
                     BookingButton.Enabled = true;
+                    DisplayButton.Enabled = false;
                 }
                 else { MessageBox.Show("Please Select a Location","Invalid Argument", MessageBoxButtons.OK,
                     MessageBoxIcon.Warning); LocationList.Focus(); }
@@ -268,8 +303,41 @@ namespace WorkShopBookingApp
 
         private void SummaryButton_Click(object sender, EventArgs e)
         {
+            TotalBookings.Text = (ProgramFeeSummary.Count()).ToString();
+
+            TotalRegFees.Text = (ProgramFeeSummary.Sum()).ToString();
+
+            TotalLodgingFees.Text = (LocationFeeSummary.Sum()).ToString();
 
 
+            AllBookingSummaryGB.Visible = true;
+        }
+
+
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            SummaryButton.Enabled = false;
+            DisplayButton.Enabled = true;
+            BookingButton.Enabled = false;
+            
+            //reverts the details shown by clicking the display button back to an empty string
+            ProgramSummary.Text = "";
+            LocationSummary.Text = "";
+            MealOptionSummary.Text = "";
+            CertificateChoosen.Text = "";
+            TotalCost.Text = "";
+
+            //summary data is reverted back to an empty string
+            TotalBookings.Text = "";
+            TotalRegFees.Text = "";
+            TotalLodgingFees.Text = "";
+            ValueOptionsChoosen.Text = "";
+            AvgRevenuePerBooking.Text = "";
+
+
+
+             
+            
 
         }
 

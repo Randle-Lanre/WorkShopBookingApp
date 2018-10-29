@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WorkShopBookingApp.Properties
+namespace Learn2Prog_Ltd.Properties
 {
 
 

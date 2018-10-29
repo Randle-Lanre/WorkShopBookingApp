@@ -1,4 +1,4 @@
-﻿namespace WorkShopBookingApp
+﻿namespace Learn2Prog_Ltd
 {
     partial class Learn2Prog_Ltd_Form
     {
@@ -53,22 +53,22 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.OptionalSelectionGB = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.AllBookingSummaryGB = new System.Windows.Forms.GroupBox();
+            this.AvgRevenuePerBooking = new System.Windows.Forms.Label();
+            this.ValueOptionsChoosen = new System.Windows.Forms.Label();
+            this.TotalLodgingFees = new System.Windows.Forms.Label();
+            this.TotalRegFees = new System.Windows.Forms.Label();
+            this.TotalBookings = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.TotalBookings = new System.Windows.Forms.Label();
-            this.TotalRegFees = new System.Windows.Forms.Label();
-            this.TotalLodgingFees = new System.Windows.Forms.Label();
-            this.ValueOptionsChoosen = new System.Windows.Forms.Label();
-            this.AvgRevenuePerBooking = new System.Windows.Forms.Label();
             this.BookingGroupBox.SuspendLayout();
             this.OptionalSelectionGB.SuspendLayout();
             this.AllBookingSummaryGB.SuspendLayout();
@@ -186,6 +186,7 @@
             this.ClearButton.Text = "Clear";
             this.ClearButton.UseVisualStyleBackColor = true;
             this.ClearButton.Visible = false;
+            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
             // 
             // CertificateList
             // 
@@ -332,6 +333,26 @@
             this.OptionalSelectionGB.TabStop = false;
             this.OptionalSelectionGB.Text = "Optional Selections";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(6, 88);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(104, 13);
+            this.label11.TabIndex = 14;
+            this.label11.Text = "Certificate option";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(6, 19);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(81, 13);
+            this.label10.TabIndex = 13;
+            this.label10.Text = "Meal Options";
+            // 
             // label7
             // 
             this.label7.Font = new System.Drawing.Font("MS Reference Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -360,6 +381,96 @@
             this.AllBookingSummaryGB.TabStop = false;
             this.AllBookingSummaryGB.Text = "Booking Summary";
             // 
+            // AvgRevenuePerBooking
+            // 
+            this.AvgRevenuePerBooking.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.AvgRevenuePerBooking.Location = new System.Drawing.Point(209, 198);
+            this.AvgRevenuePerBooking.Name = "AvgRevenuePerBooking";
+            this.AvgRevenuePerBooking.Size = new System.Drawing.Size(100, 23);
+            this.AvgRevenuePerBooking.TabIndex = 9;
+            this.AvgRevenuePerBooking.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ValueOptionsChoosen
+            // 
+            this.ValueOptionsChoosen.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.ValueOptionsChoosen.Location = new System.Drawing.Point(209, 167);
+            this.ValueOptionsChoosen.Name = "ValueOptionsChoosen";
+            this.ValueOptionsChoosen.Size = new System.Drawing.Size(100, 23);
+            this.ValueOptionsChoosen.TabIndex = 8;
+            this.ValueOptionsChoosen.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TotalLodgingFees
+            // 
+            this.TotalLodgingFees.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.TotalLodgingFees.Location = new System.Drawing.Point(209, 122);
+            this.TotalLodgingFees.Name = "TotalLodgingFees";
+            this.TotalLodgingFees.Size = new System.Drawing.Size(100, 23);
+            this.TotalLodgingFees.TabIndex = 7;
+            this.TotalLodgingFees.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TotalRegFees
+            // 
+            this.TotalRegFees.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.TotalRegFees.Location = new System.Drawing.Point(209, 77);
+            this.TotalRegFees.Name = "TotalRegFees";
+            this.TotalRegFees.Size = new System.Drawing.Size(100, 23);
+            this.TotalRegFees.TabIndex = 6;
+            this.TotalRegFees.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TotalBookings
+            // 
+            this.TotalBookings.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.TotalBookings.Location = new System.Drawing.Point(209, 40);
+            this.TotalBookings.Name = "TotalBookings";
+            this.TotalBookings.Size = new System.Drawing.Size(100, 23);
+            this.TotalBookings.TabIndex = 5;
+            this.TotalBookings.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(38, 199);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(155, 13);
+            this.label16.TabIndex = 4;
+            this.label16.Text = "Average Revenue Per Booking";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(38, 167);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(130, 13);
+            this.label15.TabIndex = 3;
+            this.label15.Text = "Value of Options Choosen";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(38, 122);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(98, 13);
+            this.label14.TabIndex = 2;
+            this.label14.Text = "Total Lodging Fees";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(35, 77);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(116, 13);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Total Registration Fees";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(35, 40);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(129, 13);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Total Number of bookings";
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -379,111 +490,6 @@
             this.label9.Size = new System.Drawing.Size(164, 13);
             this.label9.TabIndex = 23;
             this.label9.Text = "Locations and Lodging cost";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(6, 19);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(81, 13);
-            this.label10.TabIndex = 13;
-            this.label10.Text = "Meal Options";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(6, 88);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(104, 13);
-            this.label11.TabIndex = 14;
-            this.label11.Text = "Certificate option";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(35, 40);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(129, 13);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Total Number of bookings";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(35, 77);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(116, 13);
-            this.label13.TabIndex = 1;
-            this.label13.Text = "Total Registration Fees";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(38, 122);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(98, 13);
-            this.label14.TabIndex = 2;
-            this.label14.Text = "Total Lodging Fees";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(38, 167);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(130, 13);
-            this.label15.TabIndex = 3;
-            this.label15.Text = "Value of Options Choosen";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(38, 199);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(155, 13);
-            this.label16.TabIndex = 4;
-            this.label16.Text = "Average Revenue Per Booking";
-            // 
-            // TotalBookings
-            // 
-            this.TotalBookings.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.TotalBookings.Location = new System.Drawing.Point(209, 40);
-            this.TotalBookings.Name = "TotalBookings";
-            this.TotalBookings.Size = new System.Drawing.Size(100, 23);
-            this.TotalBookings.TabIndex = 5;
-            // 
-            // TotalRegFees
-            // 
-            this.TotalRegFees.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.TotalRegFees.Location = new System.Drawing.Point(209, 77);
-            this.TotalRegFees.Name = "TotalRegFees";
-            this.TotalRegFees.Size = new System.Drawing.Size(100, 23);
-            this.TotalRegFees.TabIndex = 6;
-            // 
-            // TotalLodgingFees
-            // 
-            this.TotalLodgingFees.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.TotalLodgingFees.Location = new System.Drawing.Point(209, 122);
-            this.TotalLodgingFees.Name = "TotalLodgingFees";
-            this.TotalLodgingFees.Size = new System.Drawing.Size(100, 23);
-            this.TotalLodgingFees.TabIndex = 7;
-            // 
-            // ValueOptionsChoosen
-            // 
-            this.ValueOptionsChoosen.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.ValueOptionsChoosen.Location = new System.Drawing.Point(209, 167);
-            this.ValueOptionsChoosen.Name = "ValueOptionsChoosen";
-            this.ValueOptionsChoosen.Size = new System.Drawing.Size(100, 23);
-            this.ValueOptionsChoosen.TabIndex = 8;
-            // 
-            // AvgRevenuePerBooking
-            // 
-            this.AvgRevenuePerBooking.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.AvgRevenuePerBooking.Location = new System.Drawing.Point(209, 198);
-            this.AvgRevenuePerBooking.Name = "AvgRevenuePerBooking";
-            this.AvgRevenuePerBooking.Size = new System.Drawing.Size(100, 23);
-            this.AvgRevenuePerBooking.TabIndex = 9;
             // 
             // Learn2Prog_Ltd_Form
             // 
