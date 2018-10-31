@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Learn2Prog_Ltd_Form));
             this.ProgramList = new System.Windows.Forms.ListBox();
             this.LocationList = new System.Windows.Forms.ListBox();
@@ -41,7 +42,7 @@
             this.ClearButton = new System.Windows.Forms.Button();
             this.CertificateList = new System.Windows.Forms.ListBox();
             this.BookingButton = new System.Windows.Forms.Button();
-            this.BookingGroupBox = new System.Windows.Forms.GroupBox();
+            this.BookingDetailsGB = new System.Windows.Forms.GroupBox();
             this.TotalCost = new System.Windows.Forms.Label();
             this.CertificateChoosen = new System.Windows.Forms.Label();
             this.MealOptionSummary = new System.Windows.Forms.Label();
@@ -67,11 +68,25 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.BookingGroupBox.SuspendLayout();
+            this.ProgramLabel = new System.Windows.Forms.Label();
+            this.LocationLodgingLabel = new System.Windows.Forms.Label();
+            this.WorkshopAndLocationGB = new System.Windows.Forms.GroupBox();
+            this.PasswordPanel = new System.Windows.Forms.Panel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip2 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip3 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip4 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip5 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip6 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip7 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip8 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip9 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTip10 = new System.Windows.Forms.ToolTip(this.components);
+            this.BookingDetailsGB.SuspendLayout();
             this.OptionalSelectionGB.SuspendLayout();
             this.AllBookingSummaryGB.SuspendLayout();
+            this.WorkshopAndLocationGB.SuspendLayout();
+            this.PasswordPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // ProgramList
@@ -85,7 +100,7 @@
             ".NET Prog using C# Part 1  4days\t€1,500",
             ".NET Prog using C# Part 2  4days\t€1,800",
             "Digital Detox\t          1 day\t€599"});
-            this.ProgramList.Location = new System.Drawing.Point(99, 163);
+            this.ProgramList.Location = new System.Drawing.Point(6, 30);
             this.ProgramList.Name = "ProgramList";
             this.ProgramList.Size = new System.Drawing.Size(251, 56);
             this.ProgramList.TabIndex = 2;
@@ -100,7 +115,7 @@
             "Belmullet  €305",
             "Limerick\t€135",
             "Wexford\t€89"});
-            this.LocationList.Location = new System.Drawing.Point(99, 248);
+            this.LocationList.Location = new System.Drawing.Point(6, 103);
             this.LocationList.Name = "LocationList";
             this.LocationList.Size = new System.Drawing.Size(141, 43);
             this.LocationList.TabIndex = 3;
@@ -120,17 +135,18 @@
             // 
             // UserPassInput
             // 
-            this.UserPassInput.Location = new System.Drawing.Point(251, 82);
+            this.UserPassInput.Location = new System.Drawing.Point(99, 12);
             this.UserPassInput.Name = "UserPassInput";
             this.UserPassInput.Size = new System.Drawing.Size(193, 20);
             this.UserPassInput.TabIndex = 5;
             this.UserPassInput.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.toolTip2.SetToolTip(this.UserPassInput, "Please enter your password");
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(165, 85);
+            this.label1.Location = new System.Drawing.Point(13, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 13);
             this.label1.TabIndex = 6;
@@ -138,52 +154,57 @@
             // 
             // LoginButton
             // 
-            this.LoginButton.Location = new System.Drawing.Point(307, 115);
+            this.LoginButton.Location = new System.Drawing.Point(139, 38);
             this.LoginButton.Name = "LoginButton";
             this.LoginButton.Size = new System.Drawing.Size(90, 25);
             this.LoginButton.TabIndex = 7;
             this.LoginButton.Text = "Login";
+            this.toolTip1.SetToolTip(this.LoginButton, "Click to Login");
             this.LoginButton.UseVisualStyleBackColor = true;
             this.LoginButton.Click += new System.EventHandler(this.LoginButton_Click);
             // 
             // ExitButton
             // 
-            this.ExitButton.Location = new System.Drawing.Point(340, 548);
+            this.ExitButton.Location = new System.Drawing.Point(704, 490);
             this.ExitButton.Name = "ExitButton";
-            this.ExitButton.Size = new System.Drawing.Size(87, 23);
+            this.ExitButton.Size = new System.Drawing.Size(75, 23);
             this.ExitButton.TabIndex = 8;
             this.ExitButton.Text = "Exit";
+            this.toolTip9.SetToolTip(this.ExitButton, "Click to exit");
             this.ExitButton.UseVisualStyleBackColor = true;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // DisplayButton
             // 
-            this.DisplayButton.Location = new System.Drawing.Point(399, 329);
+            this.DisplayButton.Location = new System.Drawing.Point(704, 317);
             this.DisplayButton.Name = "DisplayButton";
             this.DisplayButton.Size = new System.Drawing.Size(75, 23);
             this.DisplayButton.TabIndex = 9;
             this.DisplayButton.Text = "Display";
+            this.toolTip7.SetToolTip(this.DisplayButton, "Click to display");
             this.DisplayButton.UseVisualStyleBackColor = true;
             this.DisplayButton.Click += new System.EventHandler(this.DisplayButton_Click);
             // 
             // SummaryButton
             // 
-            this.SummaryButton.Location = new System.Drawing.Point(200, 548);
+            this.SummaryButton.Location = new System.Drawing.Point(704, 444);
             this.SummaryButton.Name = "SummaryButton";
-            this.SummaryButton.Size = new System.Drawing.Size(121, 23);
+            this.SummaryButton.Size = new System.Drawing.Size(75, 26);
             this.SummaryButton.TabIndex = 10;
-            this.SummaryButton.Text = "Booking Summary";
+            this.SummaryButton.Text = "Summary";
+            this.toolTip9.SetToolTip(this.SummaryButton, "click to display summary of all bookings");
             this.SummaryButton.UseVisualStyleBackColor = true;
             this.SummaryButton.Visible = false;
             this.SummaryButton.Click += new System.EventHandler(this.SummaryButton_Click);
             // 
             // ClearButton
             // 
-            this.ClearButton.Location = new System.Drawing.Point(399, 370);
+            this.ClearButton.Location = new System.Drawing.Point(704, 347);
             this.ClearButton.Name = "ClearButton";
             this.ClearButton.Size = new System.Drawing.Size(75, 23);
             this.ClearButton.TabIndex = 11;
             this.ClearButton.Text = "Clear";
+            this.toolTip8.SetToolTip(this.ClearButton, "click to clear ");
             this.ClearButton.UseVisualStyleBackColor = true;
             this.ClearButton.Visible = false;
             this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
@@ -201,7 +222,7 @@
             // 
             // BookingButton
             // 
-            this.BookingButton.Location = new System.Drawing.Point(99, 548);
+            this.BookingButton.Location = new System.Drawing.Point(704, 405);
             this.BookingButton.Name = "BookingButton";
             this.BookingButton.Size = new System.Drawing.Size(75, 23);
             this.BookingButton.TabIndex = 13;
@@ -210,31 +231,32 @@
             this.BookingButton.Visible = false;
             this.BookingButton.Click += new System.EventHandler(this.BookingButton_Click);
             // 
-            // BookingGroupBox
+            // BookingDetailsGB
             // 
-            this.BookingGroupBox.Controls.Add(this.TotalCost);
-            this.BookingGroupBox.Controls.Add(this.CertificateChoosen);
-            this.BookingGroupBox.Controls.Add(this.MealOptionSummary);
-            this.BookingGroupBox.Controls.Add(this.LocationSummary);
-            this.BookingGroupBox.Controls.Add(this.ProgramSummary);
-            this.BookingGroupBox.Controls.Add(this.label6);
-            this.BookingGroupBox.Controls.Add(this.label5);
-            this.BookingGroupBox.Controls.Add(this.label4);
-            this.BookingGroupBox.Controls.Add(this.label3);
-            this.BookingGroupBox.Controls.Add(this.label2);
-            this.BookingGroupBox.Location = new System.Drawing.Point(46, 317);
-            this.BookingGroupBox.Name = "BookingGroupBox";
-            this.BookingGroupBox.Size = new System.Drawing.Size(338, 205);
-            this.BookingGroupBox.TabIndex = 14;
-            this.BookingGroupBox.TabStop = false;
-            this.BookingGroupBox.Text = "Your Booking Details";
+            this.BookingDetailsGB.Controls.Add(this.TotalCost);
+            this.BookingDetailsGB.Controls.Add(this.CertificateChoosen);
+            this.BookingDetailsGB.Controls.Add(this.MealOptionSummary);
+            this.BookingDetailsGB.Controls.Add(this.LocationSummary);
+            this.BookingDetailsGB.Controls.Add(this.ProgramSummary);
+            this.BookingDetailsGB.Controls.Add(this.label6);
+            this.BookingDetailsGB.Controls.Add(this.label5);
+            this.BookingDetailsGB.Controls.Add(this.label4);
+            this.BookingDetailsGB.Controls.Add(this.label3);
+            this.BookingDetailsGB.Controls.Add(this.label2);
+            this.BookingDetailsGB.Location = new System.Drawing.Point(46, 317);
+            this.BookingDetailsGB.Name = "BookingDetailsGB";
+            this.BookingDetailsGB.Size = new System.Drawing.Size(357, 212);
+            this.BookingDetailsGB.TabIndex = 14;
+            this.BookingDetailsGB.TabStop = false;
+            this.BookingDetailsGB.Text = "Your Booking Details";
+            this.toolTip5.SetToolTip(this.BookingDetailsGB, "your booking details are displayed here");
             // 
             // TotalCost
             // 
             this.TotalCost.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.TotalCost.Location = new System.Drawing.Point(161, 173);
             this.TotalCost.Name = "TotalCost";
-            this.TotalCost.Size = new System.Drawing.Size(177, 25);
+            this.TotalCost.Size = new System.Drawing.Size(190, 25);
             this.TotalCost.TabIndex = 9;
             this.TotalCost.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -243,7 +265,7 @@
             this.CertificateChoosen.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.CertificateChoosen.Location = new System.Drawing.Point(161, 134);
             this.CertificateChoosen.Name = "CertificateChoosen";
-            this.CertificateChoosen.Size = new System.Drawing.Size(177, 25);
+            this.CertificateChoosen.Size = new System.Drawing.Size(190, 25);
             this.CertificateChoosen.TabIndex = 8;
             this.CertificateChoosen.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -252,7 +274,7 @@
             this.MealOptionSummary.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.MealOptionSummary.Location = new System.Drawing.Point(161, 98);
             this.MealOptionSummary.Name = "MealOptionSummary";
-            this.MealOptionSummary.Size = new System.Drawing.Size(177, 23);
+            this.MealOptionSummary.Size = new System.Drawing.Size(190, 23);
             this.MealOptionSummary.TabIndex = 7;
             this.MealOptionSummary.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -261,7 +283,7 @@
             this.LocationSummary.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.LocationSummary.Location = new System.Drawing.Point(161, 53);
             this.LocationSummary.Name = "LocationSummary";
-            this.LocationSummary.Size = new System.Drawing.Size(177, 26);
+            this.LocationSummary.Size = new System.Drawing.Size(190, 26);
             this.LocationSummary.TabIndex = 6;
             this.LocationSummary.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -270,14 +292,14 @@
             this.ProgramSummary.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.ProgramSummary.Location = new System.Drawing.Point(161, 16);
             this.ProgramSummary.Name = "ProgramSummary";
-            this.ProgramSummary.Size = new System.Drawing.Size(177, 27);
+            this.ProgramSummary.Size = new System.Drawing.Size(190, 27);
             this.ProgramSummary.TabIndex = 5;
             this.ProgramSummary.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(15, 173);
+            this.label6.Location = new System.Drawing.Point(3, 183);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(122, 13);
             this.label6.TabIndex = 4;
@@ -286,7 +308,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(17, 140);
+            this.label5.Location = new System.Drawing.Point(10, 146);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(84, 13);
             this.label5.TabIndex = 3;
@@ -295,7 +317,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 98);
+            this.label4.Location = new System.Drawing.Point(10, 108);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 13);
             this.label4.TabIndex = 2;
@@ -304,11 +326,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 58);
+            this.label3.Location = new System.Drawing.Point(10, 63);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 13);
+            this.label3.Size = new System.Drawing.Size(137, 13);
             this.label3.TabIndex = 1;
-            this.label3.Text = "Lodging Cost:";
+            this.label3.Text = "Location and Lodging Cost:";
             // 
             // label2
             // 
@@ -332,6 +354,7 @@
             this.OptionalSelectionGB.TabIndex = 19;
             this.OptionalSelectionGB.TabStop = false;
             this.OptionalSelectionGB.Text = "Optional Selections";
+            this.toolTip4.SetToolTip(this.OptionalSelectionGB, "Selecting a meal or certificate option");
             // 
             // label11
             // 
@@ -374,17 +397,18 @@
             this.AllBookingSummaryGB.Controls.Add(this.label14);
             this.AllBookingSummaryGB.Controls.Add(this.label13);
             this.AllBookingSummaryGB.Controls.Add(this.label12);
-            this.AllBookingSummaryGB.Location = new System.Drawing.Point(480, 329);
+            this.AllBookingSummaryGB.Location = new System.Drawing.Point(409, 317);
             this.AllBookingSummaryGB.Name = "AllBookingSummaryGB";
-            this.AllBookingSummaryGB.Size = new System.Drawing.Size(327, 242);
+            this.AllBookingSummaryGB.Size = new System.Drawing.Size(279, 212);
             this.AllBookingSummaryGB.TabIndex = 21;
             this.AllBookingSummaryGB.TabStop = false;
             this.AllBookingSummaryGB.Text = "Booking Summary";
+            this.toolTip6.SetToolTip(this.AllBookingSummaryGB, "Displays the summary of all bookings");
             // 
             // AvgRevenuePerBooking
             // 
             this.AvgRevenuePerBooking.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.AvgRevenuePerBooking.Location = new System.Drawing.Point(209, 198);
+            this.AvgRevenuePerBooking.Location = new System.Drawing.Point(162, 173);
             this.AvgRevenuePerBooking.Name = "AvgRevenuePerBooking";
             this.AvgRevenuePerBooking.Size = new System.Drawing.Size(100, 23);
             this.AvgRevenuePerBooking.TabIndex = 9;
@@ -393,7 +417,7 @@
             // ValueOptionsChoosen
             // 
             this.ValueOptionsChoosen.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.ValueOptionsChoosen.Location = new System.Drawing.Point(209, 167);
+            this.ValueOptionsChoosen.Location = new System.Drawing.Point(162, 134);
             this.ValueOptionsChoosen.Name = "ValueOptionsChoosen";
             this.ValueOptionsChoosen.Size = new System.Drawing.Size(100, 23);
             this.ValueOptionsChoosen.TabIndex = 8;
@@ -402,7 +426,7 @@
             // TotalLodgingFees
             // 
             this.TotalLodgingFees.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.TotalLodgingFees.Location = new System.Drawing.Point(209, 122);
+            this.TotalLodgingFees.Location = new System.Drawing.Point(162, 98);
             this.TotalLodgingFees.Name = "TotalLodgingFees";
             this.TotalLodgingFees.Size = new System.Drawing.Size(100, 23);
             this.TotalLodgingFees.TabIndex = 7;
@@ -411,7 +435,7 @@
             // TotalRegFees
             // 
             this.TotalRegFees.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.TotalRegFees.Location = new System.Drawing.Point(209, 77);
+            this.TotalRegFees.Location = new System.Drawing.Point(162, 58);
             this.TotalRegFees.Name = "TotalRegFees";
             this.TotalRegFees.Size = new System.Drawing.Size(100, 23);
             this.TotalRegFees.TabIndex = 6;
@@ -420,7 +444,7 @@
             // TotalBookings
             // 
             this.TotalBookings.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.TotalBookings.Location = new System.Drawing.Point(209, 40);
+            this.TotalBookings.Location = new System.Drawing.Point(162, 30);
             this.TotalBookings.Name = "TotalBookings";
             this.TotalBookings.Size = new System.Drawing.Size(100, 23);
             this.TotalBookings.TabIndex = 5;
@@ -429,7 +453,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(38, 199);
+            this.label16.Location = new System.Drawing.Point(0, 173);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(155, 13);
             this.label16.TabIndex = 4;
@@ -438,7 +462,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(38, 167);
+            this.label15.Location = new System.Drawing.Point(7, 134);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(130, 13);
             this.label15.TabIndex = 3;
@@ -447,7 +471,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(38, 122);
+            this.label14.Location = new System.Drawing.Point(11, 98);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(98, 13);
             this.label14.TabIndex = 2;
@@ -456,7 +480,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(35, 77);
+            this.label13.Location = new System.Drawing.Point(11, 60);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(116, 13);
             this.label13.TabIndex = 1;
@@ -465,31 +489,56 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(35, 40);
+            this.label12.Location = new System.Drawing.Point(7, 30);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(129, 13);
             this.label12.TabIndex = 0;
             this.label12.Text = "Total Number of bookings";
             // 
-            // label8
+            // ProgramLabel
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(96, 147);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(309, 13);
-            this.label8.TabIndex = 22;
-            this.label8.Text = "List of Programming Workshop and Registration Cost ";
+            this.ProgramLabel.AutoSize = true;
+            this.ProgramLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProgramLabel.Location = new System.Drawing.Point(-38, 16);
+            this.ProgramLabel.Name = "ProgramLabel";
+            this.ProgramLabel.Size = new System.Drawing.Size(309, 13);
+            this.ProgramLabel.TabIndex = 22;
+            this.ProgramLabel.Text = "List of Programming Workshop and Registration Cost ";
             // 
-            // label9
+            // LocationLodgingLabel
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(96, 232);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(164, 13);
-            this.label9.TabIndex = 23;
-            this.label9.Text = "Locations and Lodging cost";
+            this.LocationLodgingLabel.AutoSize = true;
+            this.LocationLodgingLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LocationLodgingLabel.Location = new System.Drawing.Point(3, 89);
+            this.LocationLodgingLabel.Name = "LocationLodgingLabel";
+            this.LocationLodgingLabel.Size = new System.Drawing.Size(164, 13);
+            this.LocationLodgingLabel.TabIndex = 23;
+            this.LocationLodgingLabel.Text = "Locations and Lodging cost";
+            // 
+            // WorkshopAndLocationGB
+            // 
+            this.WorkshopAndLocationGB.Controls.Add(this.ProgramList);
+            this.WorkshopAndLocationGB.Controls.Add(this.LocationLodgingLabel);
+            this.WorkshopAndLocationGB.Controls.Add(this.LocationList);
+            this.WorkshopAndLocationGB.Controls.Add(this.ProgramLabel);
+            this.WorkshopAndLocationGB.Location = new System.Drawing.Point(64, 154);
+            this.WorkshopAndLocationGB.Name = "WorkshopAndLocationGB";
+            this.WorkshopAndLocationGB.Size = new System.Drawing.Size(288, 157);
+            this.WorkshopAndLocationGB.TabIndex = 24;
+            this.WorkshopAndLocationGB.TabStop = false;
+            this.WorkshopAndLocationGB.Text = "Workshop and Location selection";
+            this.toolTip3.SetToolTip(this.WorkshopAndLocationGB, "Please Select a Workshop and a location");
+            // 
+            // PasswordPanel
+            // 
+            this.PasswordPanel.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.PasswordPanel.Controls.Add(this.LoginButton);
+            this.PasswordPanel.Controls.Add(this.label1);
+            this.PasswordPanel.Controls.Add(this.UserPassInput);
+            this.PasswordPanel.Location = new System.Drawing.Point(179, 60);
+            this.PasswordPanel.Name = "PasswordPanel";
+            this.PasswordPanel.Size = new System.Drawing.Size(357, 69);
+            this.PasswordPanel.TabIndex = 25;
             // 
             // Learn2Prog_Ltd_Form
             // 
@@ -498,34 +547,32 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ClientSize = new System.Drawing.Size(819, 589);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.PasswordPanel);
+            this.Controls.Add(this.WorkshopAndLocationGB);
             this.Controls.Add(this.AllBookingSummaryGB);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.OptionalSelectionGB);
-            this.Controls.Add(this.BookingGroupBox);
+            this.Controls.Add(this.BookingDetailsGB);
             this.Controls.Add(this.BookingButton);
             this.Controls.Add(this.ClearButton);
             this.Controls.Add(this.SummaryButton);
             this.Controls.Add(this.DisplayButton);
             this.Controls.Add(this.ExitButton);
-            this.Controls.Add(this.LoginButton);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.UserPassInput);
-            this.Controls.Add(this.LocationList);
-            this.Controls.Add(this.ProgramList);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Learn2Prog_Ltd_Form";
             this.Text = "Learn2Prog Ltd";
             this.Load += new System.EventHandler(this.Learn2Prog_Ltd_Form_Load);
-            this.BookingGroupBox.ResumeLayout(false);
-            this.BookingGroupBox.PerformLayout();
+            this.BookingDetailsGB.ResumeLayout(false);
+            this.BookingDetailsGB.PerformLayout();
             this.OptionalSelectionGB.ResumeLayout(false);
             this.OptionalSelectionGB.PerformLayout();
             this.AllBookingSummaryGB.ResumeLayout(false);
             this.AllBookingSummaryGB.PerformLayout();
+            this.WorkshopAndLocationGB.ResumeLayout(false);
+            this.WorkshopAndLocationGB.PerformLayout();
+            this.PasswordPanel.ResumeLayout(false);
+            this.PasswordPanel.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -543,7 +590,7 @@
         private System.Windows.Forms.Button ClearButton;
         private System.Windows.Forms.ListBox CertificateList;
         private System.Windows.Forms.Button BookingButton;
-        private System.Windows.Forms.GroupBox BookingGroupBox;
+        private System.Windows.Forms.GroupBox BookingDetailsGB;
         private System.Windows.Forms.Label TotalCost;
         private System.Windows.Forms.Label CertificateChoosen;
         private System.Windows.Forms.Label MealOptionSummary;
@@ -559,8 +606,8 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.GroupBox AllBookingSummaryGB;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label ProgramLabel;
+        private System.Windows.Forms.Label LocationLodgingLabel;
         private System.Windows.Forms.Label AvgRevenuePerBooking;
         private System.Windows.Forms.Label ValueOptionsChoosen;
         private System.Windows.Forms.Label TotalLodgingFees;
@@ -571,6 +618,18 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.GroupBox WorkshopAndLocationGB;
+        private System.Windows.Forms.Panel PasswordPanel;
+        private System.Windows.Forms.ToolTip toolTip2;
+        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolTip toolTip5;
+        private System.Windows.Forms.ToolTip toolTip4;
+        private System.Windows.Forms.ToolTip toolTip6;
+        private System.Windows.Forms.ToolTip toolTip3;
+        private System.Windows.Forms.ToolTip toolTip7;
+        private System.Windows.Forms.ToolTip toolTip9;
+        private System.Windows.Forms.ToolTip toolTip8;
+        private System.Windows.Forms.ToolTip toolTip10;
     }
 }
 
