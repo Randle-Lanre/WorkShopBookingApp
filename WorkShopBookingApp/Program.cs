@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WorkShopBookingApp
+namespace Learn2Prog_Ltd
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace WorkShopBookingApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Learn2Prog_Ltd_Form());
         }
     }
 }
